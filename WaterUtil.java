@@ -10,15 +10,13 @@ String ChemicalFormula=sc.nextLine();
 System.out.println("Is it storable?");
 boolean isStorable=sc.nextBoolean();
 sc.close();
+System.out.println(Color);
+Water water=new Water();
+water.Color=Color;
+water.ChemicalFormula=ChemicalFormula;
+water.isStorable=isStorable;
 
-Liquid liquid=new Water();
-liquid.Color=Color;
-liquid.ChemicalFormula=ChemicalFormula;
-liquid.isStorable=isStorable;
-liquid.solvents();
-
-
-System.out.println(Color+" "+ChemicalFormula+" "+isStorable);
+System.out.println(water.Color+" "+water.ChemicalFormula+" "+water.isStorable);
 }
 
 }

@@ -10,13 +10,12 @@ int Price=sc.nextInt();
 System.out.println("Enter the type of medicine");
 String type=sc.nextLine();
 sc.close();
-Medicine medicine=new Tablet();
-medicine.MedicineId=MedicineId;
-medicine.Price=Price;
-medicine.type=type;
-medicine.CureADisease();
+Tablet tablet=new Tablet();
+tablet.MedicineId=MedicineId;
+tablet.Price=Price;
+tablet.type=type;
 
-System.out.println(MedicineId+" "+Price+" "+
-type);
+System.out.println(tablet.MedicineId+" "+tablet.Price+" "+
+tablet.type);
 }
 }

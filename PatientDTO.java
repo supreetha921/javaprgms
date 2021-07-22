@@ -1,8 +1,8 @@
-public class patientDTO{
+public class PatientDTO{
 
 private String patientId;
 private String name;
-Private String[] address;
+private String[] address;
 private long mobileNo;
 private int age;
 
@@ -40,11 +40,11 @@ return mobileNo;
 public void setMobileNo(long mobileNo){
 this.mobileNo=mobileNo;
 }
-public String getAge(){
-return age;
+public int getAge(){
+  return age;
 }
 
-public void setAge(int age){
+public void setAge(int  age){
 this.age=age;
 }
 }

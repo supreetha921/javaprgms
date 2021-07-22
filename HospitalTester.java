@@ -7,17 +7,17 @@ System.out.println("Enter the size");
 int size=sc.nextInt();
 Hospital hospital=new Hospital(size);
 
-patientDTO dto=new patientDTO();
+PatientDTO dto=new PatientDTO();
 dto.setName("Hemanth");
-dto.SetPatientId("1");
+dto.setPatientId("1");
 dto.setAge(45);
 dto.setMobileNo(7874634109L);
 String addressDetails[]={"Hampinagar,Banglore-560040","Hubbali,Bangalore-789789"};
 dto.setAddress(addressDetails);
 
-patientDTO patient=new patientDTO();
+PatientDTO patient=new PatientDTO();
 patient.setName("Kishan");
-patient.SetPatientId("2");
+patient.setPatientId("2");
 patient.setAge(55);
 patient.setMobileNo(7788291021L);
 String addressDetails1[]={"vijayanagar,Banglore-560040","kulburgi,Bangalore-789782"};
@@ -33,6 +33,9 @@ hospital.getPatients();
 
 hospital.deletePatientById("1");
 hospital.getPatients();
-hospital.DisplayInformationByName(String name);
+
+hospital.getPatientByName("Hemanth");
+hospital.getPatientAgeByName("Kishan");
+
 }
 }

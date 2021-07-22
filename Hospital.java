@@ -1,16 +1,17 @@
 class Hospital{
 
 private String name;
-public patientDTO[] patients;
+public PatientDTO[] patients;
 private int index;
 
-public Hospital(){
+public Hospital(int size){
+            patients=new PatientDTO[size];
 
 System.out.println(this.getClass().getSimpleName()+"object is created");
 }
 
 
-public void savePatients(patientDTO patients){
+public void savePatients(PatientDTO patients){
 if(patients!=null){
 System.out.println("adding Patient Details");
 this.patients[index]=patients;
@@ -22,11 +23,11 @@ System.out.println("patient Details are Empty.... Please add the Patient details
 }
 }
 public void getPatients(){
-for(int i=0;i<patients;i++){
+for(int i=0;i<patients.length;i++){
 if(patients[i]!=null)
 {
   
-System.out.println(patients[i].getPatientId()+" "+patients[i].getName()+" "+patients[i].getAddress()+" "+patients[i].getAge());
+System.out.println(patients[i].getPatientId()+" "+patients[i].getName()+" "+patients[i].getAddress()+" "+patients[i].getAge()+" "+patients[i].getMobileNo());
 }
 
 else{
@@ -35,12 +36,12 @@ System.out.println("no patient found");
 }
 }
 public boolean updatePatientsMobileNoByPatientId(long mobileNo,String patientId){
-System.out.println("invoked updatePatientsMobileNoByPatientId");
+System.out.println("invoked updatePatientsMobileNoByPatientId()");
 boolean updatedMobileNo=false;
-for(int i=0;i<patients.length;i++){
-if(patients[i]!=null){
+for(int i=0; i< patients.length;i++) {
+if(patients[i]!=null)  {
 if(patientId.equals(patients[i].getPatientId())){
-         patient[i].setMobileNo(mobileNo);
+         patients[i].setMobileNo(mobileNo);
     System.out.println("MobileNo updated");
          updatedMobileNo=true;
 }
@@ -51,10 +52,10 @@ return updatedMobileNo;
 }
 public boolean deletePatientById(String patientId){
 System.out.println("invoked deletePatientById()");
-boolean delete=false;
+boolean deleted=false;
 for(int i=0;i<patients.length;i++){
-	if(patients[i]!null){
-	      if(patientid.equals(patients[i].getPatientId())){
+	if(patients[i]!=null){
+	      if(patientId.equals(patients[i].getPatientId())){
 	          patients[i]=null;
 	          deleted=true;
 	      }
@@ -62,15 +63,30 @@ for(int i=0;i<patients.length;i++){
       }
 return deleted;
 }
-public boolean DisplayInformationByName(String Name){
-System.out.println("invoked DisplayInformationByName");
-boolean DisplayInformation=false;
+public void getPatientByName(String name){
+System.out.println("invoked DisplayInformationByName()");
+
 for(int i=0;i<patients.length;i++){
 if(patients[i]!=null){
-if(patientId.equals(patients[i].getPatientId())){
-         patient[i].setName(name);
-    System.out.println("Displayed By Name");
-         NameDisplayed=true;
+
+        
+    System.out.println(patients[i].getPatientId()+" "+patients[i].getName()+" "+patients[i].getAddress()+" "+patients[i].getAge()+" "+patients[i].getMobileNo() );
+         
+}
+}
+
+
+
+}
+public void getPatientAgeByName(String name){
+System.out.println("Invoked getPatientAgeByName()");
+for(int i=0;i<patients.length;i++){
+if(patients[i]!=null){
+if(name.equals(patients[i].getName())){
+System.out.println(patients[i].getAge());
+}
+
+}
 }
 }
 }

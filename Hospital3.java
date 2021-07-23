@@ -1,4 +1,4 @@
-class Hospital{
+class Hospital3{
 
 private String name;
 public PatientDTO[] patients;
@@ -74,10 +74,8 @@ if(patients[i]!=null){
          
 }
 }
-
-
-
 }
+
 public void getPatientAgeByName(String name){
 System.out.println("Invoked getPatientAgeByName()");
 for(int i=0;i<patients.length;i++){
@@ -85,7 +83,6 @@ if(patients[i]!=null){
 if(name.equals(patients[i].getName())){
 System.out.println(patients[i].getAge());
 }
-
 }
 }
 }
@@ -95,16 +92,20 @@ public String getStateNameByPatientName(String name){
          if(patients[i]!=null){
                            if(name.equals(patients[i].getName())){
                               for(stateDTO state:patients[i].getAddress().getCountries().getStates()){
-                                               for(AreaDTO area:city.getAreas()){
-                                               System.out.println(area.getStreets());
-                                               for(StreetDTO street:area.getStreets()){
-                                                  streetNo=street.getStreetNo();
-                        }
-                   }
-                 }
-            }
-     }
-  }
+                              for(AreaDTO area:city.getAreas()){
+                              System.out.println(area.getStreets());
+                               for(StreetDTO street:area.getStreets()){
+                                         streetNo=street.getStreetNo();
+}
+                   
+}
+                 
+}
+           
+ }
+     
+}
+ }
 }
 return streetNo;
 

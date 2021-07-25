@@ -1,11 +1,11 @@
 import java.util.*;
-class BranchUtil{
+class BankUtil{
 	
 	public static void main(String a[]){
 	Scanner sc=new Scanner(System.in);
 	System.out.println("Enter the size of Apps array");
 	int size=sc.nextInt();
-	Branch branch=new Branch(size);
+	Bank bank=new Bank(size);
 	
 	for(int i=0;i<size;i++){
 		System.out.println("Enter the Id");
@@ -45,7 +45,7 @@ class BranchUtil{
 	branch.getBranch();
 	System.out.println("Enter the branchId");
 	int branchId2=sc.nextInt();
-	System.out.println(mobile.getappsById( appsId2));
+	System.out.println(branch.getbranchById( branchId2));
 	
 	branch.getBranch();
 	}

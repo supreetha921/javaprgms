@@ -32,56 +32,56 @@ for(BranchDTO DTO:branch)
 	
 	}
 	else{
-		System.out.println("Apps DTO object not found");
+		System.out.println("Branch DTO object not found");
 	}
 }
 
 
-public boolean updateAppSizeByName(String sizeInMb,String name){
-boolean sizeUpdated=false;
+public boolean updateIfscCodeByName(String ifscCode,String name){
+boolean ifscCodeUpdated=false;
 	System.out.println("invoked updateAppSizeByName");
-	for(AppsDTO dto1:apps){
-	if(name!=null && sizeInMb!=null ){
+	for(BranchDTO dto1:branch){
+	if(name!=null && ifscCode!=null ){
 		if(name.equals(dto1.getName())){
-			dto1.setSizeInMb("sizeInMb");
-			sizeUpdated=true;
+			dto1.setIfscCode("ifscCode");
+			ifscCodeUpdated=true;
 		}
 	}
 	}
-	return sizeUpdated;
+	return ifscCodeUpdated;
 }
-/*public boolean deleteappsById(int appsId){
-System.out.println("invoked deleteappsById()");
+public boolean deleteBranchById(int branchId){
+System.out.println("invoked deleteBranchById()");
 boolean deleted=false;
-for(int i=0;i<apps.length;i++){
-	if(apps[i]!=null){
-	      if(appsId==apps[i].getAppsId()){
-	          apps[i]=null;
+for(int i=0;i<branch.length;i++){
+	if(branch[i]!=null){
+	      if(branchId==branch[i].getBranchId()){
+	          branch[i]=null;
 	          deleted=true;
 	      }
                 }
       }
 return deleted;
-}*/
+}
 
-public boolean getappsById(int appsId){
-System.out.println("getappsById()");
-boolean appsdata=false;
+public boolean getBranchById(int branchId){
+System.out.println("getBranchById()");
+boolean branchdata=false;
 
-for(AppsDTO app:apps){
-if(app!=null){
-if(appsId==app.getAppsId()){
+for(BranchDTO br:branch){
+if(br!=null){
+if(branchId==br.getBranchId()){
 	
 	          
                    
 
         
-    System.out.println(app.getAppsId()+" "+app.getName()+" "+app.getType()+" "+app.getSizeInMb()+" "+app.getInternetRequired() );
-    appsdata=true;
+    System.out.println(br.getBranchId()+" "+br.getName()+" "+br.getLocation()+" "+br.getIfscCode() );
+    branchdata=true;
 }
 }
 }
-return appsdata;
+return branchdata;
 
 }
   

@@ -1,7 +1,7 @@
-abstract class sbi implements Atm{
+abstract class Sbi implements Atm{
 
 void createAccount(){
-System.out.println("Coustmer account created");
+System.out.println("Coustmer account is created");
 }
 
 
